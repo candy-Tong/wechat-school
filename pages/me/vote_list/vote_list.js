@@ -1,6 +1,6 @@
 // pages/me/vote_list/vote_list.js
 
-let sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
+let sliderWidth = 112; // 需要设置slider的宽度，用于计算中间位置
 
 Page({
 
@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ["选项一", "选项二"],
-    activeIndex: 1,
+    tabs: ["我参与的", "我发起的"],
+    activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0
   },
@@ -18,6 +18,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
+          sliderWidth,
           sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
           sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
         });

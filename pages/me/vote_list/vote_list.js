@@ -25,6 +25,14 @@ Page({
       }
     });
   },
+
+  go_result_page(e){
+    wx.navigateTo({
+      url: '/pages/me/vote_result/vote_result',
+      success: function(res) {}
+    })
+  },
+
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,

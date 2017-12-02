@@ -1,0 +1,22 @@
+/* pages/me/vote_result/vote_result.wxss */
+
+.vote_content{
+  overflow: visible;
+  margin-bottom: 15px;
+  display: block;
+}
+.selection-item{
+  color: #777;
+}
+.vote_item_wrapper{
+  display: block;
+  margin: 10px 0 5px 15px;
+}
+progress{
+  width: 60%;
+  display: inline-block;
+}
+.vote-num,.vote-persent{
+  margin-left: 20rpx;
+  font-size: 14px;
+}

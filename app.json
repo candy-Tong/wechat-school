@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/me/vote_list/vote_list",
     "pages/me/me_index/me_index",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/me/account/account"
+    "pages/me/account/account",
+    "pages/me/vote_result/vote_result",
+    "pages/me/vote_list/vote_list"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,12 +17,6 @@
     "selectedColor": "#495060",
     "backgroundColor": "#fff",
     "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "课表",
-        "iconPath": "/image/idea.png",
-        "selectedIconPath": "/image/idea_on.png"
-      },
       {
         "pagePath": "pages/me/me_index/me_index",
         "text": "我的",

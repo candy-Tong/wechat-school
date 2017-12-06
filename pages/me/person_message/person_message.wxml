@@ -1,0 +1,71 @@
+<!--pages/me/person_message/person_message.wxml-->
+
+<view class="weui-cells weui-cells_after-title">
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">名字</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder="请输入真实姓名，选填" />
+    </view>
+  </view>
+
+  <view class="weui-cells__title">学校信息</view>
+  <view class="weui-cells weui-cells_after-title">
+
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">高校</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="multiSelector" bindchange="bindSchoolChange" bindcolumnchange="bindProvinceChange" value="{{[province_index,school_index]}}" range="{{[province_list,school_list]}}">
+          <view class="weui-select weui-select_in-select-after">{{school?school:'未填写'}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 校园网账号 -->
+    <block wx:if="{{school_need_account[school]}}">
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">账号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input bindinput="bindAccountInput" value='{{account?account:""}}' disabled='{{accountInputDisabled}}' class="weui-input" placeholder="请输入汕大账号" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">密码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input bindinput="bindPasswordInput" password class="weui-input" placeholder="请输入密码" />
+        </view>
+      </view>
+    </block>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">专业</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入专业，选填" />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">宿舍</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入宿舍，选填" />
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="weui-tab__content">
+  <button bindtap="bindAccount" hover-class="button_hover" class="button ">确定</button>
+</view>

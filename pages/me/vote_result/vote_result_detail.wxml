@@ -1,0 +1,42 @@
+<!--pages/me/vote_result/vote_result_detail.wxml-->
+
+<view class="weui-panel__bd selection-item">
+  <view class="weui-media-box weui-media-box_small-appmsg">
+    <view class="weui-cells weui-cells_in-small-appmsg">
+      <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd weui-cell_primary">
+          <view>A. 啦啦啦啦</view>
+          <view class='vote_item_wrapper'>
+            <progress percent="60" color="pink" />
+            <text class='vote-num'>100票</text>
+            <text class='vote-persent'>10%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="weui-panel__hd">投票用户</view>
+<view class="weui-panel__bd">
+  <view class="weui-media-box weui-media-box_small-appmsg">
+    <view class="weui-cells weui-cells_in-small-appmsg">
+
+      <block wx:for="0000">
+        <view class="vote-list weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+            <image src="{{avatar}}" mode='aspectFill' style="width: 35px;height: 35px;margin-right: 5px;margin-right:40rpx" />
+          </view>
+          <view class="weui-cell__bd weui-cell_primary">
+            <view class='username'>15cthuang</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+
+      </block>
+
+
+    </view>
+  </view>
+</view>

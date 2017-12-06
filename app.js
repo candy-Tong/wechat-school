@@ -1,6 +1,9 @@
 //app.js
 let my_log = require('/libs/log.js')
-global.version = '1.0.17'
+
+global.version = 'NULL'
+
+global.userinfo = {}
 
 
 global.token = wx.getStorageSync('token')

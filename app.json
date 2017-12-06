@@ -1,10 +1,13 @@
 {
   "pages": [
+  
     "pages/me/me_index/me_index",
+      "pages/me/person_message/person_message",
     "pages/index/index",
     "pages/logs/logs",
     "pages/me/account/account",
     "pages/me/vote_result/vote_result",
+    "pages/me/vote_result/vote_result_detail",
     "pages/me/vote_list/vote_list"
   ],
   "window": {

@@ -1,0 +1,20 @@
+/* pages/me/vote_result/vote_result_detail.wxss */
+
+.vote_item_wrapper{
+  display: block;
+  margin: 10px 0 5px 15px;
+}
+progress{
+  width: 60%;
+  display: inline-block;
+}
+.vote-num,.vote-persent{
+  margin-left: 20rpx;
+  font-size: 14px;
+}
+.vote-list{
+  padding: 3px 15px;
+}
+.username{
+  color: #999
+}

@@ -19,7 +19,7 @@
     <view class="weui-cells weui-cells_in-small-appmsg">
 
       <block wx:for='{{[0,0,0,0]}}'>
-        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view bindtap='go_detail_page' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
           <view class="weui-cell__bd weui-cell_primary">
             <view>A. 啦啦啦啦</view>
             <view class='vote_item_wrapper'>

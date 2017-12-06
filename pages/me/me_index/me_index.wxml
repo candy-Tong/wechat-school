@@ -16,10 +16,10 @@
       <view class="weui-media-box weui-media-box_small-appmsg">
         <view class="option-item weui-cells weui-cells_in-small-appmsg">
 
-          <view bindtap="bindAccount" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <navigator url='/pages/me/person_message/person_message'  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">个人信息</view>
             <view class="weui-cell__ft">{{account}}</view>
-          </view>
+          </navigator>
 
           <navigator url='/pages/me/vote_list/vote_list' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">我的投票</view>

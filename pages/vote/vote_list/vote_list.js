@@ -28,7 +28,7 @@ Page({
 
   go_result_page(e){
     wx.navigateTo({
-      url: '/pages/me/vote_result/vote_result',
+      url: '/pages/vote/vote_result/vote_result',
       success: function(res) {}
     })
   },

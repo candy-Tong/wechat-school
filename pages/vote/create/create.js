@@ -1,4 +1,4 @@
-// pages/me/vote_result/vote_result.js
+// pages/vote/create/create.js
 Page({
 
   /**
@@ -6,13 +6,6 @@ Page({
    */
   data: {
   
-  },
-
-  go_detail_page(e){
-  wx.navigateTo({
-    url: '/pages/me/vote_result/vote_result_detail',
-    success: function(res) {}
-  })
   },
 
   /**

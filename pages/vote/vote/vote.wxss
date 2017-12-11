@@ -1,0 +1,25 @@
+/* pages/vote/vote/vote.wxss */
+
+.title {
+  color: #495060;
+}
+
+.vote-wrapper {
+  margin-top: 20px;
+  color: #999;
+}
+
+.question {
+  color: #495060;
+}
+
+.button {
+  margin: 30px auto;
+  color: white;
+  background-color: rgba(52, 152, 219, 0.8);
+  width: 420rpx;
+}
+
+.button_hover {
+  background-color: rgba(52, 152, 219, 0.5);
+}

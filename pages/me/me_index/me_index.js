@@ -11,13 +11,13 @@ Page({
   },
   // 用于对比全局token，有改变则要更新界面
   token: 'none',
-
+  is_login:false,
 
   bindgetuserInfo(e) {
     my_log.info('用户点击登录', false)
 
     let that = this
-    console.log(e)
+    // console.log(e)
     let userInfo = e.detail
     if (userInfo.errMsg && userInfo.errMsg.indexOf('fail') > 0) {
       my_log.error("无法获取用户userInfo")
@@ -26,11 +26,6 @@ Page({
     
     if (userInfo.errMsg && userInfo.errMsg.indexOf('ok') > 0) {
       global.userInfo = userInfo.userInfo
-      wx.setStorage({
-        key: 'userInfo',
-        data: global.userInfo,
-      })
-
       that.setData({
         userInfo: global.userInfo,
         account: global.account
@@ -77,10 +72,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userInfo = wx.getStorageSync('userInfo')
-    this.setData({
-      userInfo
-    })
+
   },
 
   /**
@@ -94,6 +86,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if(global.is_login===true&&global.is_login!==this.is_login){
+      this.setData({
+        userInfo: global.userInfo
+      })
+    }
 
   },
 
@@ -130,17 +127,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    return {
-      title: '汕大的课表',
-      path: '/pages/classes/classes',
-      imageUrl: '/image/stu_syllabus.jpg',
-      success: function (res) {
-        // 转发成功
-        console.log(res)
-      },
-      fail: function (res) {
-        // 转发失败
-      }
-    }
+   
   },
 })

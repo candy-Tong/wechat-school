@@ -21,7 +21,7 @@
             <view class="weui-cell__ft">{{account}}</view>
           </navigator>
 
-          <navigator url='/pages/me/vote_list/vote_list' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <navigator url='/pages/vote/vote_list/vote_list' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">我的投票</view>
             <!-- <view class="weui-cell__ft"></view> -->
           </navigator>

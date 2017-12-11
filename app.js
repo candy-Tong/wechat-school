@@ -1,9 +1,10 @@
 //app.js
+let curFileName = "app.js"
 let my_log = require('/libs/log.js')
 
 global.version = 'NULL'
-
-global.userinfo = {}
+global.is_login=wx.getStorageSync("is_login")
+global.userInfo
 
 
 global.token = wx.getStorageSync('token')
@@ -12,10 +13,10 @@ global.token = wx.getStorageSync('token')
 global.account = wx.getStorageSync('account')
 global.password = wx.getStorageSync('password')
 
-
-global.showError = true
-global.baseurl = 'https://candycute.cn/'
-global.stuUrl = 'https://class.stuapps.com'
+"pages/index/index",
+  "pages/index/index",
+  global.showError = true
+global.baseurl = 'https://easy-mock.com/mock/5a19234f4a055229cab8e584/example'
 
 
 App({
@@ -28,32 +29,61 @@ App({
   },
 
   onLaunch: function () {
-
-    // 初始化
-    console.log(global)
-
+    let that = this
+    my_log.info("global对象", global)
+   
     wx.login({
       success: function (res) {
+        
         if (res.code) {
-          // 检查是否登录
-          if (global.token) {
-            my_log.info('已登录')
-            // 获取用户授权过的信息,更新微信信息
-            this.getUserInfo()    // global.userInfo
+          //发起网络请求
+          wx.request({
+            url: global.baseurl + '/user/open?is_login=true',
+            data: {
+              code: res.code
+            },
+            success(res) {
+              console.log(res.data)
+              my_log.info("打开小程序API返回值", res.data, false)
+              // 请求错误处理
+              that.request_error_check(res, function () {
+                if (res.data.data.is_login) {
+                  // 已登录
+                  my_log.info("已登录")
+                  that.saveData({is_login:true},function(){
+                    that.getUserInfo()
+                  })
+                } else {
+                  // 未登录
+                  my_log.info("未登录")
+                }
+              })
 
-            `
-            发送请求，待完成
-            `
 
-          } else {
-            my_log.info('未登录')
-            // 缓存 loginCode 用于第一次登录
-            global.code = res.code
-          };
 
+            }
+          })
         } else {
-          my_log.info('获取用户登录态失败！' + res.errMsg)
+          console.log('获取用户登录态失败！' + res.errMsg)
         }
+
+        // // 检查是否登录
+        // if (global.token) {
+        //   my_log.info('已登录')
+        //   // 获取用户授权过的信息,更新微信信息
+        //   this.getUserInfo()    // global.userInfo
+
+        //   `
+        //   发送请求，待完成
+        //   `
+
+        // } else {
+        //   my_log.info('未登录')
+        //   // 缓存 loginCode 用于第一次登录
+        //   global.code = res.code
+        // };
+
+
       }
     });
   },
@@ -259,9 +289,8 @@ App({
   },
 
 
-
-  updateMsg(data, callBackObject) {
-    // 更新数据
+  // 将数据设为全局变量，并缓存
+  saveData(data, callback) {
 
     for (let index in data) {
       global[index] = data[index]
@@ -272,18 +301,9 @@ App({
     }
 
     console.log("更新信息回调开始")
-    if (typeof callBackObject == 'object') {
-      callBackObject.forEach(function (item, index, object) {
-        if (item.func && (item.isError == undefined || item.isError != true)) {
-          if (item.parm) {
-            item.func(item.parm)
-          } else {
-            item.func()
-          }
-        }
-      })
+    if(callback){
+      callback()
     }
-
   },
 
   // 检查登录是否过期
@@ -360,5 +380,13 @@ App({
       }
     })
   },
+
+  request_error_check(res, callback) {
+    if (res.statusCode !== 200 || res.data.error_code !== 0) {
+      my_log.error("发生错误，statusCode 非200 或 error_code 非0", { message: res.data.message, position: curFileName })
+    } else {
+      callback()
+    }
+  }
 
 })

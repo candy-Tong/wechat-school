@@ -9,7 +9,7 @@ function info(message, other_arguments, showLog = true) {
     msg: message,
     type:'info',
     token: global.token ? global.token : null,
-    time: new Date().toString()
+    time: new Date().toLocaleString()
   }
   Object.assign(log,other_arguments)
   if (showLog) {
@@ -36,7 +36,7 @@ function error(message, other_arguments, showLog = true) {
     other_arguments
   }
   if (showLog) {
-    console.log(log)
+    console.error(log)
   }
   //调用API从本地缓存中获取数据
   let logs = wx.getStorageSync('logs') || []

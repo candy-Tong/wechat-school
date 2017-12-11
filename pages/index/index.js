@@ -9,6 +9,21 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  url:'',
+  changeUrl(e){
+    console.log(e.detail.value)
+    this.url=e.detail.value
+  },
+  clear(){
+    this.setData({
+      hasUserInfo:false
+    })
+    try {
+      wx.clearStorageSync()
+    } catch (e) {
+      // Do something when catch error
+    }
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({

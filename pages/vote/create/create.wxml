@@ -1,2 +1,39 @@
 <!--pages/vote/create/create.wxml-->
-<text>pages/vote/create/create.wxml</text>
+
+
+<view class='section'>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">投票题目</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入题目" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">补充描述</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入补充" />
+      </view>
+    </view>
+  </view>
+  <view class="weui-panel__hd">选项</view>
+  <view class="weui-cells weui-cells_after-title">
+    <block wx:for="{{[0,0,0,0]}}">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="{{'选项'+(index+1)}}" />
+        </view>
+      </view>
+    </block>
+
+    <view class="weui-cell weui-cell_link">
+      <view class="weui-cell__bd">添加选项</view>
+    </view>
+  </view>
+
+<button  bindtap="bindAccount" hover-class="bind_phone_button_hover" class="bind_phone_button ">发起投票</button>
+</view>

@@ -20,6 +20,7 @@ Page({
     // console.log(e)
     let userInfo = e.detail
     if (userInfo.errMsg && userInfo.errMsg.indexOf('fail') > 0) {
+      my_log.info(userInfo)
       my_log.error("无法获取用户userInfo")
       return
     }

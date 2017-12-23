@@ -1,0 +1,67 @@
+<!--pages/vote_create/vote_create.wxml-->
+
+<view class='section'>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">投票题目</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入题目" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">补充描述</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入补充" />
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+     <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="选项" />
+         </view> 
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="选项" />
+        </view> 
+      </view>
+      <view class="weui-cell weui-cell_link">
+        <view class="weui-cell__bd">添加选项</view>        
+      </view>
+  </view>
+
+  <view>
+    <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">是否多选</view>
+        <view class="weui-cell__ft">
+          <switch unchecked />
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">是否匿名</view>
+        <view class="weui-cell__ft">
+          <switch unchecked />
+        </view>
+    </view>
+    <view class="section1">         
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+            投票高校:{{array[index]}}
+        </view>
+      </picker>
+      <picker mode="date" value="{{date}}" start="2017-01-01" end="2100-12-31" bindchange="bindDateChange">
+        <view class="picker">
+            截止日期:{{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+ 
+  <button class="weui-btn" type="primary">发起投票</button>
+</view>

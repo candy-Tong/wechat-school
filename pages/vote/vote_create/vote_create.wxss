@@ -1,0 +1,5 @@
+/* pages/vote_create/vote_create.wxss */
+
+.section1{
+  margin-left:15px;
+}

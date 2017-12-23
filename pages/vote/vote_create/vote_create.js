@@ -1,11 +1,21 @@
-// pages/vote/create/create.js
+// pages/vote_create/vote_create.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    array: ['无', '汕头大学'],
+    objectArray: [
+      {
+        id: 0,
+        name: '无'
+      },
+      {
+        id: 1,
+        name: '汕头大学'
+      }
+    ],
   },
 
   /**
@@ -62,5 +72,24 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  /**
+   * 选择投票高校
+   */
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  /**
+   * 选择投票截止日期
+   */
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
   }
+  
 })

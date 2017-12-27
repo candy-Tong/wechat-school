@@ -1,15 +1,15 @@
 {
   "pages": [
-    "pages/vote/create/create",
     "pages/me/me_index/me_index",
+    "pages/vote/create/create",
+    "pages/vote/vote/vote",
     "pages/me/person_message/person_message",
     "pages/index/index",
     "pages/logs/logs",
     "pages/me/account/account",
     "pages/vote/vote_result/vote_result",
     "pages/vote/vote_result/vote_result_detail",
-    "pages/vote/vote_list/vote_list",
-    "pages/vote/vote/vote"
+    "pages/vote/vote_list/vote_list"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,12 +32,6 @@
         "text": "我的",
         "iconPath": "/image/person-center.png",
         "selectedIconPath": "/image/person-center_on.png"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志",
-        "iconPath": "/image/idea.png",
-        "selectedIconPath": "/image/idea_on.png"
       }
     ]
   },

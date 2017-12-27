@@ -13,15 +13,6 @@
       </view>
     </view>
   </view>
-</view>
-
-
-
-<view class="vote-wrapper weui-panel__bd">
-  <view class="weui-media-box weui-media-box_text">
-    <view class="question weui-media-box__title weui-media-box__title_in-text">单选题</view>
-
-  </view>
 
   <view class="weui-cells weui-cells_after-title">
     <radio-group bindchange="radioChange">
@@ -37,6 +28,28 @@
   </view>
 </view>
 
+
+
+<!-- <view class="vote-wrapper weui-panel__bd">
+  <view class="weui-media-box weui-media-box_text">
+     <view class="question weui-media-box__title weui-media-box__title_in-text">单选题</view> 
+
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <radio-group bindchange="radioChange">
+      <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+        <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+
+        <view class="weui-cell__bd">{{item.name}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+          <icon color='#3498db' class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+        </view>
+      </label>
+    </radio-group>
+  </view>
+</view> -->
+<!-- 
 <view class="vote-wrapper weui-panel__bd">
   <view class="weui-media-box weui-media-box_text">
     <view class="question weui-media-box__title weui-media-box__title_in-text">多选题</view>
@@ -54,10 +67,10 @@
       </label>
     </checkbox-group>
   </view>
-</view>
+</view> -->
 
 
-<view class="vote-wrapper weui-panel__bd">
+<!-- <view class="vote-wrapper weui-panel__bd">
   <view class="weui-media-box weui-media-box_text">
     <view class="question weui-media-box__title weui-media-box__title_in-text">填空题</view>
   </view>
@@ -69,7 +82,7 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
 
 <view class="weui-tab__content">
   <button bindtap="bindAccount" hover-class="button_hover" class="button ">确定</button>

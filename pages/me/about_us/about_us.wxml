@@ -1,0 +1,44 @@
+<!--about_us.wxml-->
+<view class="page">
+
+  <view>
+    <image src="/image/vote.jpg" style="margin-left:25%; vertical-align: middle; width:150px; height: 120px;"></image>
+    <view class="page__bd">
+      <view class="weui-cells__title">功能介绍</view>
+      <view class="weui-cells__title">　　可将投票范围限定在汕头大学</view>
+      <view class="weui-cells weui-cells_after-title"></view>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">开发人员</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="/image/candy.jpg" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">candyTong</view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="/image/Mandy.jpg" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">Mandy</view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="/image/LC.jpg" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">LC</view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="/image/Y.M.L.jpg" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">Y.M.L</view>
+      </view>
+
+  </view>
+</view>
